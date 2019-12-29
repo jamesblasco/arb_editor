@@ -9,3 +9,4 @@ This project is in active development and it is not stable yet.
 - [ ] Stable and functional
 - [ ] Number, plurals and dates support
 - [ ] Github implementation 
+
