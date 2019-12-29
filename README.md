@@ -1,6 +1,7 @@
 # Arb Editor
 
-![https://jamesblasco/github.io/arb_editor/master/](https://github.com/jamesblasco/arb_editor/blob/master/header.png?raw=true)
+<a href="https://jamesblasco.github.io/arb_editor/master/" rel="">![Arb Editor](https://github.com/jamesblasco/arb_editor/blob/master/header.png?raw=true)</a>
+
 
 This project is in active development and it is not stable yet.
 
