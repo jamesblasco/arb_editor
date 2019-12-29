@@ -4,6 +4,10 @@
 
 This project is in active development and it is not stable yet.
 
+Master version => https://jamesblasco.github.io/arb_editor/master/#/
+
+Release version will be deploy on **jamesblasco.github.io/arb_editor/**
+
 ## Roadmap
 
 - [ ] Stable and functional
