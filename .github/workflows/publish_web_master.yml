@@ -21,7 +21,8 @@ jobs:
          flutter build web --release
       - run: |
           cd build/web
-          mv !(master) master
+          mkdir master
+          find . ! -name . -prune ! -name master -exec mv {} master/ \;
           git init
           # type configurations: your user.email and user.name followed lines 
           # git config --global user.email your_email 
