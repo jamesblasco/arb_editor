@@ -11,18 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: subosito/flutter-action@v1
+      - uses: jamesblasco/arb_editor@v1
         with:
           channel: 'dev'
       - run: |
-          cd example
           flutter config --enable-web
           flutter pub get
       - run: |
-         cd example
          flutter build web --release
       - run: |
-          cd example/build/web
+          cd build/web
           mv !(master) master
           git init
           # type configurations: your user.email and user.name followed lines 
