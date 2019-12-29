@@ -1,0 +1,52 @@
+{
+  "@@locale": "en_US",
+  "@@last_modified": "2019-12-29T08:48:13.283",
+  "title": "AR",
+  "market": "Market",
+  "portfolio": "portfolio",
+  "addDescription": "Add description",
+  "test": "asd",
+  "trial": "a",
+  "tert": "sgfh",
+  "mode": "sdfdg",
+  "@title": {
+    "placeholders": {},
+    "description": "Id description",
+    "type": "Text"
+  },
+  "@market": {
+    "placeholders": {},
+    "description": "Market test",
+    "type": "Text"
+  },
+  "@portfolio": {
+    "placeholders": {},
+    "description": "",
+    "type": "Text"
+  },
+  "@addDescription": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@test": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@trial": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@tert": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@mode": {
+    "placeholders": {},
+    "description": "fhgfh",
+    "type": "text"
+  }
+}

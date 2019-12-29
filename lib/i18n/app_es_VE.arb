@@ -1,0 +1,46 @@
+{
+  "@@locale": "es_VE",
+  "@@last_modified": "2019-12-29T08:55:10.275",
+  "market": "Test",
+  "addDescription": "s",
+  "title": "test",
+  "portfolio": "sdfd",
+  "trial": "df",
+  "test": "asd",
+  "tert": "dfg",
+  "@market": {
+    "placeholders": {},
+    "description": "Market test",
+    "type": "Text"
+  },
+  "@addDescription": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@title": {
+    "placeholders": {},
+    "description": "Title description",
+    "type": "Text"
+  },
+  "@portfolio": {
+    "placeholders": {},
+    "description": "",
+    "type": "Text"
+  },
+  "@trial": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@test": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@tert": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  }
+}

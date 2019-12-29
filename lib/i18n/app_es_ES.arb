@@ -1,0 +1,52 @@
+{
+  "@@locale": "es_ES",
+  "@@last_modified": "2019-12-29T08:48:13.285",
+  "title": "Editor ARB",
+  "market": "MERCADO",
+  "portfolio": "CARTERA",
+  "addDescription": "Añadir descripción",
+  "trial": "fd",
+  "test": "asd",
+  "mode": "dfg",
+  "tert": "dgf",
+  "@title": {
+    "placeholders": {},
+    "description": "Title description",
+    "type": "Text"
+  },
+  "@market": {
+    "placeholders": {},
+    "description": "Market test",
+    "type": "Text"
+  },
+  "@portfolio": {
+    "placeholders": {},
+    "description": "Eeee",
+    "type": "Text"
+  },
+  "@addDescription": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@trial": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@test": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@mode": {
+    "placeholders": {},
+    "description": "fhgfh",
+    "type": "text"
+  },
+  "@tert": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  }
+}

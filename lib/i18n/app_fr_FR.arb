@@ -1,0 +1,52 @@
+{
+  "@@locale": "fr_FR",
+  "@@last_modified": "2019-12-29T09:45:46.086",
+  "portfolio": "afsdf",
+  "title": "sdf",
+  "market": "sfdf",
+  "trial": "fd",
+  "test": "ads",
+  "addDescription": "s",
+  "tert": "df",
+  "mode": "dfg",
+  "@portfolio": {
+    "placeholders": {},
+    "description": "",
+    "type": "Text"
+  },
+  "@title": {
+    "placeholders": {},
+    "description": "Id description",
+    "type": "Text"
+  },
+  "@market": {
+    "placeholders": {},
+    "description": "Market test",
+    "type": "Text"
+  },
+  "@trial": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@test": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@addDescription": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@tert": {
+    "placeholders": {},
+    "description": "",
+    "type": "text"
+  },
+  "@mode": {
+    "placeholders": {},
+    "description": "fhgfh",
+    "type": "text"
+  }
+}
