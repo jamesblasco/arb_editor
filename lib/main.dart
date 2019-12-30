@@ -38,6 +38,7 @@ class _App extends State<ArbApp> {
 
   @override
   void initState() {
+
     locale = ValueNotifier(window.navigator.language.replaceAll('-', '_'));
     super.initState();
   }
@@ -59,7 +60,7 @@ class _App extends State<ArbApp> {
           builder:  (_, __, ___)=>BlocProvider(
           create: (_) => ArbProjectBloc(),
           child: MaterialApp(
-            locale: LocaleUtils.fromString(locale.value),
+            locale: AppStrings.delegate.isSupported(LocaleUtils.fromString(locale.value)) ? LocaleUtils.fromString(locale.value) : null,
             supportedLocales: AppStrings.supportedLocales,
             localizationsDelegates: AppStrings.localizationsDelegates,
             title: '.ARB Editor',
