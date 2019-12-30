@@ -1,9 +1,9 @@
 {
   "@@locale": "en_US",
   "@@last_modified": "2019-12-30T14:23:02.879",
-  "dragFiles": "Drag .arb to start a new project",
+  "dragFiles": "Drag .arb files to start a new project",
   "or": "or",
-  "createEmptyProject": "Create an empty proyect",
+  "createEmptyProject": "Create an empty project",
   "recentProjects": "Recent projects",
   "lastUpdate": "Last update",
   "newResource": "Create new resource",
