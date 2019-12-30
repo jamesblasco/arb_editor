@@ -11,9 +11,9 @@ packages:
   arb:
     dependency: "direct main"
     description:
-      name: arb
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "../dart_arb"
+      relative: true
+    source: path
     version: "0.0.2"
   archive:
     dependency: "direct main"

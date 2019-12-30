@@ -1,50 +1,110 @@
 {
   "@@locale": "es_ES",
-  "@@last_modified": "2019-12-29T08:48:13.285",
-  "title": "Editor ARB",
-  "market": "MERCADO",
-  "portfolio": "CARTERA",
+  "@@last_modified": "2019-12-30T14:31:03.071",
+  "dragFiles": "Arrastra aqui archivos .arb para empezar un nuevo projecto",
+  "or": "o",
+  "createEmptyProject": "Crear un projecto nuevo",
+  "recentProjects": "Projectos recientes",
+  "lastUpdate": "Última actualización",
+  "newResource": "Crear un nuevo recurso",
+  "id": "Id",
   "addDescription": "Añadir descripción",
-  "trial": "fd",
-  "test": "asd",
-  "mode": "dfg",
-  "tert": "dgf",
-  "@title": {
+  "idAlreadyExists": "Este id ya existe",
+  "empty": "Vacio",
+  "delete": "Borrar",
+  "download": "Descargar",
+  "deleteDialogTitle": "¿Quieres eliminar este projecto?",
+  "deleteDialogMessage": "Este cambio es irreversible, ¿estás seguro que quieres eliminarlo para siempre?",
+  "cancel": "Cancelar",
+  "addLocale": "Crear una nueva traducción",
+  "create": "Crear",
+  "project": "Proyecto",
+  "@dragFiles": {
     "placeholders": {},
-    "description": "Title description",
-    "type": "Text"
+    "description": "Description for dragging dart files to add a new project",
+    "type": "text"
   },
-  "@market": {
+  "@or": {
     "placeholders": {},
-    "description": "Market test",
-    "type": "Text"
+    "description": "",
+    "type": "text"
   },
-  "@portfolio": {
+  "@createEmptyProject": {
     "placeholders": {},
-    "description": "Eeee",
-    "type": "Text"
+    "description": "Create an empty project button",
+    "type": "text"
+  },
+  "@recentProjects": {
+    "placeholders": {},
+    "description": "Recent projects title",
+    "type": "text"
+  },
+  "@lastUpdate": {
+    "placeholders": {},
+    "description": "Last update label",
+    "type": "text"
+  },
+  "@newResource": {
+    "placeholders": {},
+    "description": "create new resource button",
+    "type": "text"
+  },
+  "@id": {
+    "placeholders": {},
+    "description": "id word",
+    "type": "text"
   },
   "@addDescription": {
     "placeholders": {},
-    "description": "",
+    "description": "Add description label",
     "type": "text"
   },
-  "@trial": {
+  "@idAlreadyExists": {
     "placeholders": {},
-    "description": "",
+    "description": "Error : id already exits",
     "type": "text"
   },
-  "@test": {
+  "@empty": {
     "placeholders": {},
-    "description": "",
+    "description": "empty work",
     "type": "text"
   },
-  "@mode": {
+  "@delete": {
     "placeholders": {},
-    "description": "fhgfh",
+    "description": "delete button",
     "type": "text"
   },
-  "@tert": {
+  "@download": {
+    "placeholders": {},
+    "description": "descargar",
+    "type": "text"
+  },
+  "@deleteDialogTitle": {
+    "placeholders": {},
+    "description": "Do you want to delete this project?",
+    "type": "text"
+  },
+  "@deleteDialogMessage": {
+    "placeholders": {},
+    "description": "This change is irreversible, are you sure you want to delete it forever?",
+    "type": "text"
+  },
+  "@cancel": {
+    "placeholders": {},
+    "description": "cancel action",
+    "type": "text"
+  },
+  "@addLocale": {
+    "placeholders": {},
+    "description": "add translation",
+    "type": "text"
+  },
+  "@create": {
+    "placeholders": {},
+    "description": "create action",
+    "type": "text"
+  },
+  "@project": {
     "placeholders": {},
     "description": "",
     "type": "text"

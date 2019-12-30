@@ -1,85 +1,53 @@
 
 
 import 'package:arb/dart_arb.dart';
+import 'package:arb_editor/arb_bloc/arb_local_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 
-mixin ArbBlocState {}
+import 'arb_event.dart';
+import 'arb_state.dart';
 
-class Empty with  ArbBlocState {}
-class Editing  with  ArbBlocState {
-  final ArbProject project;
+export 'arb_state.dart';
+export 'arb_event.dart';
 
-  Editing(this.project);
-}
-
-mixin ArbBlocEvent {}
-
-class InitArbProject with ArbBlocEvent {
-  final ArbProject project;
-
-  InitArbProject(this.project);
-}
-
-class UpdateProject with ArbBlocEvent {
-
-  UpdateProject();
-}
-
-class ClearProject with ArbBlocEvent {
-
-  ClearProject();
-}
 class ArbProjectBloc extends Bloc<ArbBlocEvent, ArbBlocState> {
   ArbProject project;
   List<ArbProject> projects = [];
-  Box<ArbProject> box;
+
+  ArbLocalRepository repository;
   @override
   get initialState =>  Empty();
 
   ArbProjectBloc() {
-    Hive.registerAdapter(ArbProjectAdapter(), 0);
-    Hive.openBox<ArbProject>('projects').then((box)
-    {
-      this.box = box;
-      if(box.values.isNotEmpty)
-      projects = box.values.toList();
+    repository = ArbLocalRepository();
+    repository.projects.then((projects) {
+      this.projects = projects;
       if(state is Empty) add(ClearProject());
     });
   }
 
   @override
   Stream<ArbBlocState> mapEventToState(ArbBlocEvent event)  async* {
-    print('hello');
-    if(event is InitArbProject){
-      print('is init');
+    if(event is InitProject){
       project = event.project;
-      box.put(project.fileName, project);
-
+      yield Editing(project);
+    } else if(event is CreateProject){
+      project = event.project;
+      projects.add(project);
+      await repository.setProject(project);
       yield Editing(project);
     } else if (event is UpdateProject) {
-      box.put(project.fileName, project);
+      await repository.setProject(project);
       yield Editing(project);
     } else if (event is ClearProject) {
       project = null;
-      print('is not init');
+      yield Empty();
+    } else if (event is DeleteCurrentProject) {
+      await repository.removeProject(project);
+      projects.remove(project);
+      project = null;
       yield Empty();
     }
   }
-
-
-
 }
-
-class ArbProjectAdapter extends TypeAdapter<ArbProject> {
-  @override
-  ArbProject read(BinaryReader reader) {
-    return ArbProject.decode(reader.readString());
-  }
-
-  @override
-  void write(BinaryWriter writer, ArbProject obj) {
-    writer.writeString(obj.encode());
-  }
-}
-

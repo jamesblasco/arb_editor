@@ -1,5 +1,6 @@
 import 'package:arb/dart_arb.dart';
 import 'package:arb_editor/arb_bloc/arb_bloc.dart';
+import 'package:arb_editor/i18n/app_strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:arb_editor/utils.dart';
@@ -39,7 +40,7 @@ class _ResourceCardState extends State<CreateResourceCard> {
               ),
               padding: EdgeInsets.all(12),
               alignment: Alignment.center,
-              child: Text('Create new resource', style: Theme.of(context).accentTextTheme.body2,),
+              child: Text(AppStrings.of(context).newResource, style: Theme.of(context).accentTextTheme.body2,),
           ),
       )
     );

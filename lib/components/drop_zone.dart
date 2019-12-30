@@ -4,6 +4,7 @@ import 'dart:html';
 
 import 'package:arb/dart_arb.dart';
 import 'package:arb_editor/arb_bloc/arb_bloc.dart';
+import 'package:arb_editor/i18n/app_strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utils.dart';
@@ -72,7 +73,7 @@ class _DropZoneState extends State<DropZone> {
     return Padding(
       padding: const EdgeInsets.all(0.0),
       child: Container(
-        height: 150,
+        height: 200,
         width: double.infinity,
         decoration: BoxDecoration(
             border: Border.all(
@@ -88,21 +89,22 @@ class _DropZoneState extends State<DropZone> {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Text('Drag arb files to start a new project ', style: state ==
-                    _DragState.dragging ? Theme.of(context).textTheme.body1 : Theme.of(context).accentTextTheme.body1),
+                Text(AppStrings.of(context).dragFiles, style: state ==
+                    _DragState.dragging ? Theme.of(context).textTheme.title : Theme.of(context).accentTextTheme.title),
                 SizedBox(height: 12),
-                Text('or', style: state ==
+                Text(AppStrings.of(context).or, style: state ==
                     _DragState.dragging ? Theme.of(context).textTheme.caption : Theme.of(context).accentTextTheme.caption),
                 SizedBox(height: 12),
-                MaterialButton(
+                FlatButton(
                   shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(12.0),
+                      borderRadius: new BorderRadius.circular(8.0),
                     //  side: BorderSide(color: Colors.red)
                   ),
-                 color: Colors.white,
+                 color: Colors.white.withOpacity(0.2),
+                 textColor: Colors.white,
                  onPressed: () => {
-                    context.arbBloc.add(InitArbProject(ArbProject('app', documents: [ArbDocument('en_US')])))
-               }, child: Text('Create an empty project'),)
+                    context.arbBloc.add(CreateProject(ArbProject('app', documents: [ArbDocument('en_US')])))
+               }, child: Text(AppStrings.of(context).createEmptyProject),)
               ],
             )
         ),

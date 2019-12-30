@@ -82,33 +82,67 @@ class AppStrings {
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en', 'US'),
     Locale('es', 'ES'),
-    Locale('es', 'VE'),
-    Locale('fr', 'FR'),
   ];
-  String get title {
+  String get dragFiles {
     return Intl.message(
-      r'AR',
+      r'Drag .arb to start a new project',
       locale: _localeName,
-      name: 'title',
-      desc: r'Id description'
+      name: 'dragFiles',
+      desc: r'Description for dragging dart files to add a new project'
     );
   }
 
-  String get market {
+  String get or {
     return Intl.message(
-      r'Market',
+      r'or',
       locale: _localeName,
-      name: 'market',
-      desc: r'Market test'
-    );
-  }
-
-  String get portfolio {
-    return Intl.message(
-      r'portfolio',
-      locale: _localeName,
-      name: 'portfolio',
+      name: 'or',
       desc: r''
+    );
+  }
+
+  String get createEmptyProject {
+    return Intl.message(
+      r'Create an empty project',
+      locale: _localeName,
+      name: 'createEmptyProject',
+      desc: r'Create an empty project button'
+    );
+  }
+
+  String get recentProjects {
+    return Intl.message(
+      r'Recent projects',
+      locale: _localeName,
+      name: 'recentProjects',
+      desc: r'Recent projects title'
+    );
+  }
+
+  String get lastUpdate {
+    return Intl.message(
+      r'Last update',
+      locale: _localeName,
+      name: 'lastUpdate',
+      desc: r'Last update label'
+    );
+  }
+
+  String get newResource {
+    return Intl.message(
+      r'Create new resource',
+      locale: _localeName,
+      name: 'newResource',
+      desc: r'create new resource button'
+    );
+  }
+
+  String get id {
+    return Intl.message(
+      r'Id',
+      locale: _localeName,
+      name: 'id',
+      desc: r'id word'
     );
   }
 
@@ -117,43 +151,97 @@ class AppStrings {
       r'Add description',
       locale: _localeName,
       name: 'addDescription',
-      desc: r''
+      desc: r'Add description label'
     );
   }
 
-  String get test {
+  String get idAlreadyExists {
     return Intl.message(
-      r'asd',
+      r'Id already exits',
       locale: _localeName,
-      name: 'test',
-      desc: r''
+      name: 'idAlreadyExists',
+      desc: r'Error : id already exits'
     );
   }
 
-  String get trial {
+  String get empty {
     return Intl.message(
-      r'a',
+      r'Empty',
       locale: _localeName,
-      name: 'trial',
-      desc: r''
+      name: 'empty',
+      desc: r'empty work'
     );
   }
 
-  String get tert {
+  String get delete {
     return Intl.message(
-      r'sgfh',
+      r'Delete',
       locale: _localeName,
-      name: 'tert',
-      desc: r''
+      name: 'delete',
+      desc: r'delete button'
     );
   }
 
-  String get mode {
+  String get download {
     return Intl.message(
-      r'sdfdg',
+      r'Download',
       locale: _localeName,
-      name: 'mode',
-      desc: r'fhgfh'
+      name: 'download',
+      desc: r'descargar'
+    );
+  }
+
+  String get deleteDialogTitle {
+    return Intl.message(
+      r'Do you want to delete this project?',
+      locale: _localeName,
+      name: 'deleteDialogTitle',
+      desc: r'Do you want to delete this project?'
+    );
+  }
+
+  String get deleteDialogMessage {
+    return Intl.message(
+      r'This change is irreversible, are you sure you want to delete it forever?',
+      locale: _localeName,
+      name: 'deleteDialogMessage',
+      desc: r'This change is irreversible, are you sure you want to delete it forever?'
+    );
+  }
+
+  String get cancel {
+    return Intl.message(
+      r'Cancel',
+      locale: _localeName,
+      name: 'cancel',
+      desc: r'cancel action'
+    );
+  }
+
+  String get addLocale {
+    return Intl.message(
+      r'Add new translation',
+      locale: _localeName,
+      name: 'addLocale',
+      desc: r'add translation'
+    );
+  }
+
+  String get create {
+    return Intl.message(
+      r'Create',
+      locale: _localeName,
+      name: 'create',
+      desc: r'done action'
+    );
+  }
+
+  String get project {
+    return Intl.message(
+      r'Project',
+      locale: _localeName,
+      name: 'project',
+      desc: r''
     );
   }
 
@@ -163,7 +251,7 @@ class _AppStringsDelegate extends LocalizationsDelegate<AppStrings> {
   @override
   Future<AppStrings> load(Locale locale) => AppStrings.load(locale);
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es', 'es', 'fr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es'].contains(locale.languageCode);
   @override
   bool shouldReload(_AppStringsDelegate old) => false;
 }

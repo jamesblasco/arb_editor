@@ -27,7 +27,7 @@ class _App extends State<ArbApp> {
         supportedLocales: AppStrings.supportedLocales,
         locale: Locale('es', 'ES'),
         localizationsDelegates: AppStrings.localizationsDelegates,
-        title: 'Flutter Demo',
+        title: '.ARB Editor',
         theme: ThemeData(
           accentColor: Colors.deepPurpleAccent,
           scaffoldBackgroundColor: Colors.deepPurpleAccent,
