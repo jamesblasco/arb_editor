@@ -1,6 +1,7 @@
 import 'package:arb/models/arb_project.dart';
 import 'package:arb_editor/arb_bloc/arb_bloc.dart';
 import 'package:arb_editor/components/arb_drop_zone.dart';
+import 'package:arb_editor/components/change_locale.dart';
 import 'package:arb_editor/i18n/app_strings.dart';
 import 'package:arb_editor/pages/home/project_card.widget.dart';
 import 'package:fluid_layout/fluid_layout.dart';
@@ -30,7 +31,6 @@ class HomePage extends StatelessWidget {
                 print('pre arbBloc');
                 context.arbBloc
                     .add(CreateProject(ArbProject(name, documents: files)));
-                print(files.map((file) => file.locale));
               }),
               SizedBox(height: 60),
               Text(AppStrings.of(context).recentProjects,
@@ -45,7 +45,14 @@ class HomePage extends StatelessWidget {
                             height: 100,
                             child: ProjectCard(project: project),
                           ))
-                      .toList())
+                      .toList()),
+              SizedBox(height: 40),
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                //  ChangeLocaleDropDownButton()
+                ],
+              )
             ],
           ),
         ),

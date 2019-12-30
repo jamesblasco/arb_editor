@@ -106,7 +106,7 @@ class ProjectHeaderBar extends StatelessWidget {
 
     final Map<String, String> arbFiles = project.documents
         .asMap()
-        .map((_, doc) => MapEntry(doc.localeString, doc.encode()));
+        .map((_, doc) => MapEntry(doc.locale, doc.encode()));
 
     project.documents.forEach((doc) {
       final fileName = '${project.fileName}_${doc.locale}.arb';

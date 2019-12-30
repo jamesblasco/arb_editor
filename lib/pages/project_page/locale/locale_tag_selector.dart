@@ -14,8 +14,8 @@ class LocaleTagSelector extends StatelessWidget {
       spacing: 12,
       children: context.arb.documents
           .map((doc) => LocaleTag(
-                locale: doc.localeString,
-                selected: doc.localeString == context.arb.defaultTemplate,
+                locale: doc.locale,
+                selected: doc.locale == context.arb.defaultTemplate,
                 onSelect: (_) => {},
               ))
           .toList()

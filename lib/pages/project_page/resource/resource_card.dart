@@ -126,7 +126,7 @@ class _ResourceCardState extends State<ResourceCard>
                                     Container(
                                       padding: EdgeInsets.all(20),
                                       color: Colors.grey[100],
-                                      child: Text(doc.localeString),
+                                      child: Text(doc.locale),
                                     ),
                                     Expanded(
                                       child: Container(

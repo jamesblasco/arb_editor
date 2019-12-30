@@ -80,12 +80,12 @@ class AppStrings {
   ];
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('en', 'US'),
     Locale('es', 'ES'),
+    Locale('en', 'US'),
   ];
   String get dragFiles {
     return Intl.message(
-      r'Drag .arb to start a new project',
+      r'Arrastra aqui archivos .arb para empezar un nuevo projecto',
       locale: _localeName,
       name: 'dragFiles',
       desc: r'Description for dragging dart files to add a new project'
@@ -94,7 +94,7 @@ class AppStrings {
 
   String get or {
     return Intl.message(
-      r'or',
+      r'o',
       locale: _localeName,
       name: 'or',
       desc: r''
@@ -103,7 +103,7 @@ class AppStrings {
 
   String get createEmptyProject {
     return Intl.message(
-      r'Create an empty project',
+      r'Crear un projecto nuevo',
       locale: _localeName,
       name: 'createEmptyProject',
       desc: r'Create an empty project button'
@@ -112,7 +112,7 @@ class AppStrings {
 
   String get recentProjects {
     return Intl.message(
-      r'Recent projects',
+      r'Projectos recientes',
       locale: _localeName,
       name: 'recentProjects',
       desc: r'Recent projects title'
@@ -121,7 +121,7 @@ class AppStrings {
 
   String get lastUpdate {
     return Intl.message(
-      r'Last update',
+      r'Última actualización',
       locale: _localeName,
       name: 'lastUpdate',
       desc: r'Last update label'
@@ -130,7 +130,7 @@ class AppStrings {
 
   String get newResource {
     return Intl.message(
-      r'Create new resource',
+      r'Crear un nuevo recurso',
       locale: _localeName,
       name: 'newResource',
       desc: r'create new resource button'
@@ -148,7 +148,7 @@ class AppStrings {
 
   String get addDescription {
     return Intl.message(
-      r'Add description',
+      r'Añadir descripción',
       locale: _localeName,
       name: 'addDescription',
       desc: r'Add description label'
@@ -157,7 +157,7 @@ class AppStrings {
 
   String get idAlreadyExists {
     return Intl.message(
-      r'Id already exits',
+      r'Este id ya existe',
       locale: _localeName,
       name: 'idAlreadyExists',
       desc: r'Error : id already exits'
@@ -166,7 +166,7 @@ class AppStrings {
 
   String get empty {
     return Intl.message(
-      r'Empty',
+      r'Vacio',
       locale: _localeName,
       name: 'empty',
       desc: r'empty work'
@@ -175,7 +175,7 @@ class AppStrings {
 
   String get delete {
     return Intl.message(
-      r'Delete',
+      r'Borrar',
       locale: _localeName,
       name: 'delete',
       desc: r'delete button'
@@ -184,7 +184,7 @@ class AppStrings {
 
   String get download {
     return Intl.message(
-      r'Download',
+      r'Descargar',
       locale: _localeName,
       name: 'download',
       desc: r'descargar'
@@ -193,7 +193,7 @@ class AppStrings {
 
   String get deleteDialogTitle {
     return Intl.message(
-      r'Do you want to delete this project?',
+      r'¿Quieres eliminar este projecto?',
       locale: _localeName,
       name: 'deleteDialogTitle',
       desc: r'Do you want to delete this project?'
@@ -202,7 +202,7 @@ class AppStrings {
 
   String get deleteDialogMessage {
     return Intl.message(
-      r'This change is irreversible, are you sure you want to delete it forever?',
+      r'Este cambio es irreversible, ¿estás seguro que quieres eliminarlo para siempre?',
       locale: _localeName,
       name: 'deleteDialogMessage',
       desc: r'This change is irreversible, are you sure you want to delete it forever?'
@@ -211,7 +211,7 @@ class AppStrings {
 
   String get cancel {
     return Intl.message(
-      r'Cancel',
+      r'Cancelar',
       locale: _localeName,
       name: 'cancel',
       desc: r'cancel action'
@@ -220,7 +220,7 @@ class AppStrings {
 
   String get addLocale {
     return Intl.message(
-      r'Add new translation',
+      r'Crear una nueva traducción',
       locale: _localeName,
       name: 'addLocale',
       desc: r'add translation'
@@ -229,16 +229,16 @@ class AppStrings {
 
   String get create {
     return Intl.message(
-      r'Create',
+      r'Crear',
       locale: _localeName,
       name: 'create',
-      desc: r'done action'
+      desc: r'create action'
     );
   }
 
   String get project {
     return Intl.message(
-      r'Project',
+      r'Proyecto',
       locale: _localeName,
       name: 'project',
       desc: r''
@@ -251,7 +251,7 @@ class _AppStringsDelegate extends LocalizationsDelegate<AppStrings> {
   @override
   Future<AppStrings> load(Locale locale) => AppStrings.load(locale);
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['es', 'en'].contains(locale.languageCode);
   @override
   bool shouldReload(_AppStringsDelegate old) => false;
 }

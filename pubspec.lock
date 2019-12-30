@@ -11,10 +11,10 @@ packages:
   arb:
     dependency: "direct main"
     description:
-      path: "../dart_arb"
-      relative: true
-    source: path
-    version: "0.0.2"
+      name: arb
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.4"
   archive:
     dependency: "direct main"
     description:
@@ -283,7 +283,7 @@ packages:
     source: hosted
     version: "1.0.2"
   provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: provider
       url: "https://pub.dartlang.org"
