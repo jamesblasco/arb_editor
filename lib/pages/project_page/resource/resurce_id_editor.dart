@@ -2,6 +2,7 @@ import 'package:arb/dart_arb.dart';
 import 'package:arb_editor/arb_bloc/arb_event.dart';
 import 'package:arb_editor/i18n/app_strings.dart';
 import 'package:flutter/material.dart';
+
 import '../../../utils.dart';
 
 class ResourceIdEditor extends StatelessWidget {
@@ -15,7 +16,7 @@ class ResourceIdEditor extends StatelessWidget {
     return TextFormField(
       initialValue: resource.id,
       onChanged: (newId) => updateId(context, newId),
-      maxLines: 1,
+      maxLines: null,
       style: Theme
           .of(context)
           .textTheme

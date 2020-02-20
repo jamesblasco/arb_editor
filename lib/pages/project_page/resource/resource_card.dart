@@ -32,6 +32,7 @@ class _ResourceCardState extends State<ResourceCard>
             Row(
               children: <Widget>[
                 Expanded(
+                  flex: 10,
                   child: Padding(
                     child: ResourceIdEditor(
                         resource: widget.resource,
