@@ -4,9 +4,9 @@ import 'package:arb/dart_arb.dart';
 import 'package:arb_editor/arb_bloc/arb_bloc.dart';
 import 'package:arb_editor/i18n/app_strings.dart';
 import 'package:arb_editor/pages/project_page/resource/resurce_id_editor.dart';
+import 'package:arb_editor/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:arb_editor/utils.dart';
 
 class ResourceCard extends StatefulWidget {
   final ArbResource resource;
@@ -22,8 +22,13 @@ class _ResourceCardState extends State<ResourceCard>
   bool expanded = false;
   bool idError = false;
 
+  static const double maxPercent = 100.0;
+
   @override
   Widget build(BuildContext context) {
+
+    double translatePercentage = calculatePercentageDone(context);
+
     return Card(
       child: Container(
         child: Column(
@@ -68,15 +73,14 @@ class _ResourceCardState extends State<ResourceCard>
                     child: Container(
                         padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                            color:
-                                Theme.of(context).accentColor.withOpacity(0.2),
+                            color: (translatePercentage < maxPercent ? Theme.of(context).errorColor : Theme.of(context).accentColor).withOpacity(0.2),
                             borderRadius: BorderRadius.circular(6)),
                         child: Text(
-                          calculatePercentegeDone(context),
+                          '$translatePercentage%',
                           style: Theme.of(context)
                               .textTheme
                               .caption
-                              .copyWith(color: Theme.of(context).accentColor),
+                              .copyWith(color: translatePercentage < maxPercent ? Theme.of(context).errorColor : Theme.of(context).accentColor),
                         ))),
                 Padding(
                   padding:
@@ -176,12 +180,14 @@ class _ResourceCardState extends State<ResourceCard>
     );
   }
 
-  String calculatePercentegeDone(BuildContext context) {
+  double calculatePercentageDone(BuildContext context) {
     int value = context.arb.documents
-        .map((doc) => doc.resources[widget.resource.id] == null ? 0 : 1)
+        .map((doc) => doc.resources[widget.resource.id] == null || doc.resources[widget.resource.id].value.text.isEmpty ? 0 : 1)
         .fold(0, (r, a) => r + a);
-    return '${(value * 100) / context.arb.locales.length}%';
+
+    return (value * maxPercent) / context.arb.locales.length;
   }
+
 }
 
 extension ListUtils<T> on List<T> {
