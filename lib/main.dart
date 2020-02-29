@@ -18,6 +18,7 @@ import 'i18n/app_strings.dart';
 import 'utils.dart';
 
 void main() async {
+  FlutterError.onError = (e) => print(e);
   runApp(ArbApp());
 }
 
