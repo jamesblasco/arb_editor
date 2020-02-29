@@ -130,11 +130,14 @@ String genSimpleMethod(ArbResource resource) {
         .replaceAll('@message', '${genSimpleMethodMessage(bundle, key)}')
         .replaceAll('@intlMethodArgs', genIntlMethodArgs(bundle, key).join(',\n      '));*/
 //  }
-
-  return getterMethodTemplate
-      .replaceAll('@methodName', '${resource.id}' )
-      .replaceAll('@message', '${generateString(resource.value.text)}')
-      .replaceAll('@intlMethodArgs', [ 'name: \'${resource.id}\'', 'desc: ${generateString(resource.description)}'].join(',\n      '));
+  if(resource == null) {
+    print('There is a null resource that won\'t be saved');
+    return '';
+  }
+    return getterMethodTemplate
+        .replaceAll('@methodName', '${resource.id}' )
+        .replaceAll('@message', '${generateString(resource.value.text)}')
+        .replaceAll('@intlMethodArgs', [ 'name: \'${resource.id}\'', 'desc: ${generateString(resource.description)}'].join(',\n      '));
       //genIntlMethodArgs(bundle, key).join(',\n      '));
 }
 

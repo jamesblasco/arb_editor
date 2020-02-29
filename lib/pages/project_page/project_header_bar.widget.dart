@@ -11,6 +11,7 @@ import 'package:archive/archive.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils.dart';
+import 'dart:developer';
 
 class ProjectHeaderBar extends StatelessWidget {
   @override
@@ -93,55 +94,66 @@ class ProjectHeaderBar extends StatelessWidget {
   }
 
   void downloadFiles(BuildContext context) {
-    final file = compress(context.arb);
-    final fileName = '${context.arb.fileName}_intl.zip';
-    download(file, fileName);
+    try {
+      final file = compress(context.arb);
+      final fileName = '${context.arb.fileName}_intl.zip';
+      download(file, fileName);
+    } catch (e) {
+       Scaffold.of(context).showSnackBar(
+           SnackBar(content: Text('An error ocurred, contact hi@jaimeblasco.com for help')));
+    }
   }
 
 
   Blob compress(ArbProject project) {
-    var output = OutputStream();
-    var encode = ZipEncoder();
-    encode.startEncode(output);
+    try {
+      var output = OutputStream();
+      var encode = ZipEncoder();
+      encode.startEncode(output);
 
-    final Map<String, String> arbFiles = project.documents
-        .asMap()
-        .map((_, doc) => MapEntry(doc.locale, doc.encode()));
+      final Map<String, String> arbFiles = project.documents
+          .asMap()
+          .map((_, doc) => MapEntry(doc.locale, doc.encode()));
 
-    project.documents.forEach((doc) {
-      final fileName = '${project.fileName}_${doc.locale}.arb';
-      Blob file = Blob([doc.encode()], 'text/plain');
+      project.documents.forEach((doc) {
+        final fileName = '${project.fileName}_${doc.locale}.arb';
+        Blob file = Blob([doc.encode()], 'text/plain');
+        final archive = ArchiveFile.noCompress(
+            fileName, file.size, utf8.encode(doc.encode()));
+        encode.addFile(archive);
+      });
+
+      final dartFileName = '${project.fileName}_strings.dart';
+      String dartFileContent =
+      LocalizationsGenerator(project).generateOutputFile();
+      Blob file = Blob([dartFileContent], 'text/plain');
       final archive = ArchiveFile.noCompress(
-          fileName, file.size, utf8.encode(doc.encode()));
+          dartFileName, file.size, utf8.encode(dartFileContent));
       encode.addFile(archive);
-    });
 
-    final dartFileName = '${project.fileName}_strings.dart';
-    String dartFileContent =
-    LocalizationsGenerator(project).generateOutputFile();
-    Blob file = Blob([dartFileContent], 'text/plain');
-    final archive = ArchiveFile.noCompress(
-        dartFileName, file.size, utf8.encode(dartFileContent));
-    encode.addFile(archive);
+      final messagesFiles = MessagesFileGenerator()
+          .generateFiles(arbFiles, dartFileContent, dartFileName);
 
-    final messagesFiles = MessagesFileGenerator()
-        .generateFiles(arbFiles, dartFileContent, dartFileName);
+      messagesFiles.forEach((name, content) {
+        Blob file = Blob([content], 'text/plain');
+        final archive =
+        ArchiveFile.noCompress(name, file.size, utf8.encode(content));
+        encode.addFile(archive);
+      });
 
-    messagesFiles.forEach((name, content) {
-      Blob file = Blob([content], 'text/plain');
-      final archive =
-      ArchiveFile.noCompress(name, file.size, utf8.encode(content));
-      encode.addFile(archive);
-    });
+      encode.endEncode();
 
-    encode.endEncode();
+      print(output);
 
-    print(output);
-
-    return Blob(
-      [output.getBytes()],
-      'application/zip',
-    );
+      return Blob(
+        [output.getBytes()],
+        'application/zip',
+      );
+    } on L10nException catch (e) {
+      print(e.message);
+    }catch (e) {
+      print(e);
+    }
   }
 }
 
