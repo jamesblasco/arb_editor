@@ -150,9 +150,9 @@ class ProjectHeaderBar extends StatelessWidget {
         'application/zip',
       );
     } on L10nException catch (e) {
-      print(e.message);
-    }catch (e) {
-      print(e);
+      print('Error: ${e.message}');
+    } catch (e) {
+      print('Error: $e');
     }
   }
 }
