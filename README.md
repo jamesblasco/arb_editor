@@ -21,6 +21,7 @@ dart ../../flutter/dev/tools/localization/bin/gen_l10n.dart --template-arb-file 
 }
 ```
 
+----
 
 
 
